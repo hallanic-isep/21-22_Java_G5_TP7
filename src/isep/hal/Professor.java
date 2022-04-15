@@ -2,15 +2,23 @@ package isep.hal;
 
 import java.util.Scanner;
 
+import static isep.hal.Pokemon.*;
+
 public class Professor extends Player {
 
-    public Professor() {
-        this.getPokemons().add("Tiplouf");
-        this.getPokemons().add("Ouisticram");
-        this.getPokemons().add("Tortipouss");
+    public static Professor createProfessorSorbier() {
+        return new Professor(TIPLOUF, OUISTICRAM, TORTIPOUSS);
     }
 
-    public String askForPokemon() {
+    public static Professor createProfessorSeko() {
+        return new Professor(ARCKO, POUSSIFEU, GOBOU);
+    }
+
+    public static Professor createProfessorChen() {
+        return new Professor(BULBIZARRE, SALAMECHE, CARAPUCE);
+    }
+
+    public Pokemon askForPokemon() {
 
         System.out.println("Quel Pokemon ?");
         for (int i = 0; i < this.getPokemons().size(); i++) {
@@ -37,7 +45,13 @@ public class Professor extends Player {
             }
         }
 
-        String pokemon = this.getPokemons().remove(index);
+        Pokemon pokemon = this.getPokemons().remove(index);
         return pokemon;
+    }
+
+    private Professor(Pokemon ... pokemons) {
+        for (Pokemon pokemon: pokemons) {
+            this.getPokemons().add(pokemon);
+        }
     }
 }

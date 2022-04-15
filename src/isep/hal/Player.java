@@ -9,11 +9,11 @@ public class Player {
         this.pokemons = new ArrayList<>();
     }
 
-    public List<String> getPokemons() {
+    public List<Pokemon> getPokemons() {
         return pokemons;
     }
 
-    private List<String> pokemons;
-    // Sans constructeur : private List<String> pokemons = new ArrayList<>();
+    private List<Pokemon> pokemons;
+    // Sans constructeur : private List<Pokemon> pokemons = new ArrayList<>();
 
 }
